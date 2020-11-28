@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8799495232825706523}
   - component: {fileID: 1513391374536640923}
   - component: {fileID: 6900492351370650568}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Limb (1)
   m_TagString: Dummy
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 7979328259499748769}
   - component: {fileID: 3080499570087183524}
   - component: {fileID: 2440035856655615184}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Limb (5)
   m_TagString: Dummy
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 4338966598685856523}
   - component: {fileID: 2138664897744203353}
   - component: {fileID: 3983720979937866806}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Limb (4)
   m_TagString: Dummy
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 7915673456360130842}
   - component: {fileID: 2030719521844302656}
   - component: {fileID: 7234098188638614838}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Head
   m_TagString: Dummy
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 4977839490772285330}
   - component: {fileID: 1968581785640109121}
   - component: {fileID: 6854571676319461582}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MainRagdoll(Torso)
   m_TagString: Dummy
   m_Icon: {fileID: 0}
@@ -693,9 +693,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6910392504008221136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.51524395, z: 0}
-  m_LocalScale: {x: 0.122279786, y: 0.122279786, z: 0.122279786}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 2727864955555191217}
   - {fileID: 3238363404704619190}
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 6050851966628063742}
   - component: {fileID: 3527534382324511952}
   - component: {fileID: 3102721148537405940}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Limb
   m_TagString: Dummy
   m_Icon: {fileID: 0}

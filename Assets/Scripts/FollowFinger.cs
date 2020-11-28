@@ -13,10 +13,13 @@ public class FollowFinger : MonoBehaviour
 
     private SpringJoint2D Spring;
     private GameObject currentBox;
+
+
+    
     private void Start()
     {
         Spring = transform.GetChild(1).gameObject.GetComponent<SpringJoint2D>();
-        position = new Vector2(0, -4f);
+        position = new Vector2(0, 2f);
 
     }
     public void ResetPosition()
@@ -29,13 +32,13 @@ public class FollowFinger : MonoBehaviour
     {
         // Cast a ray straight down.
        
-        RaycastHit2D hit = Physics2D.Raycast(transform.GetChild(0).position, Vector2.up,4);
+        RaycastHit2D hit = Physics2D.Raycast(transform.GetChild(0).position, Vector2.up,2);
         if (hit.collider != null && hit.collider.CompareTag("Dummy"))
         {
             if(currentBox != hit.collider.gameObject)
             currentBox = hit.collider.gameObject;
             Spring.connectedBody = currentBox.GetComponent<Rigidbody2D>();
-        }else if(currentBox != null && (transform.GetChild(0).position.y+0.5f > currentBox.transform.position.y ||  currentBox.transform.position.y- transform.GetChild(0).position.y  > 3))
+        }else if(currentBox != null && (transform.GetChild(0).position.y - 4 > currentBox.transform.position.y ||  currentBox.transform.position.y > transform.GetChild(1).position.y +1 || currentBox.transform.position.x > transform.GetChild(1).position.x+4 || currentBox.transform.position.x < transform.GetChild(1).position.x - 4))
         {
             Debug.Log("Break");
             Spring.connectedBody = null;

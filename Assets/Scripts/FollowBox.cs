@@ -29,7 +29,7 @@ public class FollowBox : MonoBehaviour
         {
                 desiredPosition = Dummy.position + offset;
         
-                smoothedPosition = Vector3.Lerp(transform.position,new Vector3(transform.position.x, desiredPosition.y, transform.position.z), smoothSpeed);
+                smoothedPosition = Vector3.Lerp(transform.position,desiredPosition, smoothSpeed);
                 transform.position = smoothedPosition;
             if(transform.position.y - Dummy.position.y < 10)
             {

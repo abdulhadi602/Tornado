@@ -14,11 +14,20 @@ public class TouchSC : MonoBehaviour
 
     public Transform Tornado;
 
+
+
+
     // Update is called once per frame
 
     private Vector2 lastTornadoPos;
 
     public static bool TouchEnabled;
+
+
+
+    private Vector3 desiredPosition;
+    private Vector3 smoothedPosition;
+    public float smoothSpeed = 0.125f;
 
     void Update()
     {
@@ -54,7 +63,7 @@ public class TouchSC : MonoBehaviour
                     //Touch.gameObject.SetActive(true);
                     if (lastTornadoPos.x - touchPos.x < 2 && lastTornadoPos.x - touchPos.x > -2 && lastTornadoPos.y - touchPos.y < 2 && lastTornadoPos.y - touchPos.y > -2)
                     {
-                        Tornado.position = touchPos;
+                        desiredPosition = touchPos;
                     }
                     else
                     {
@@ -75,8 +84,8 @@ public class TouchSC : MonoBehaviour
 
                     if (lastTornadoPos.x - touchPos.x < 2 && lastTornadoPos.x - touchPos.x > -2 && lastTornadoPos.y - touchPos.y < 4 && lastTornadoPos.y - touchPos.y > -4)
                     {
-                        
-                        Tornado.position = touchPos;
+
+                        desiredPosition = touchPos;
                     }
                     else
                     {
@@ -102,5 +111,10 @@ public class TouchSC : MonoBehaviour
         }
         
 
+    }
+    private void FixedUpdate()
+    {
+        smoothedPosition = Vector3.Lerp(Tornado.position, desiredPosition, smoothSpeed);
+        Tornado.position = smoothedPosition;
     }
 }

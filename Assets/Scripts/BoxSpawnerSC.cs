@@ -19,7 +19,7 @@ public class BoxSpawnerSC : MonoBehaviour
 
    public void InstantiateNewBox()
     {
-        fingerSC.ResetPosition();
+       
         currentBox = GameObject.Instantiate(Box, transform.position, Quaternion.identity);
         FollowBoxSC.SetNewInstance(currentBox.transform);
     }
