@@ -25,7 +25,7 @@ public class ManagerSC : MonoBehaviour
     }
     public void GameOver()
     {
-        if (!RestartCanvas.activeSelf)
+        if (!RestartCanvas.activeSelf && !LevelCompleteCanvas.activeSelf)
         {
             SoundManager.PlayHit();
             Circle.SetActive(false);

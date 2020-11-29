@@ -45,5 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RestartCanvas: {fileID: 0}
   LevelCompleteCanvas: {fileID: 0}
+  GameStartCanvas: {fileID: 0}
   Circle: {fileID: 0}
   SpringJoinObj: {fileID: 0}
+  Touch: {fileID: 0}

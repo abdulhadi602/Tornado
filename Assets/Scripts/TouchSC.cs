@@ -29,6 +29,9 @@ public class TouchSC : MonoBehaviour
     private Vector3 smoothedPosition;
     public float smoothSpeed = 0.125f;
 
+   
+   
+
     void Update()
     {
         // Initiating touch event
@@ -46,7 +49,7 @@ public class TouchSC : MonoBehaviour
 
             // obtain touch position
 
-            Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+            Vector2 touchPos = GetWorldPositionOnPlane(touch.position,0);
 
 
             // get touch to take a deal with
@@ -61,14 +64,14 @@ public class TouchSC : MonoBehaviour
 
 
                     //Touch.gameObject.SetActive(true);
-                    if (lastTornadoPos.x - touchPos.x < 2 && lastTornadoPos.x - touchPos.x > -2 && lastTornadoPos.y - touchPos.y < 2 && lastTornadoPos.y - touchPos.y > -2)
+                    if (lastTornadoPos.x - touchPos.x < 1 && lastTornadoPos.x - touchPos.x > -1 && lastTornadoPos.y - touchPos.y < 1 && lastTornadoPos.y - touchPos.y > -1)
                     {
                         desiredPosition = touchPos;
+                        Tornado.transform.GetChild(2).gameObject.SetActive(false);
+                      
                     }
-                    else
-                    {
-                        Tornado.GetChild(1).gameObject.GetComponent<SpringJoint2D>().connectedBody = null;
-                    }
+                    
+                  
 
 
                   break;
@@ -82,16 +85,14 @@ public class TouchSC : MonoBehaviour
 
 
 
-                    if (lastTornadoPos.x - touchPos.x < 2 && lastTornadoPos.x - touchPos.x > -2 && lastTornadoPos.y - touchPos.y < 4 && lastTornadoPos.y - touchPos.y > -4)
-                    {
 
+                    
+                        Tornado.transform.GetChild(2).gameObject.SetActive(false);
                         desiredPosition = touchPos;
-                    }
-                    else
-                    {
+
+                    
+                    
                    
-                        Tornado.GetChild(1).gameObject.GetComponent<SpringJoint2D>().connectedBody = null;
-                    }
 
                     break;
 
@@ -102,7 +103,8 @@ public class TouchSC : MonoBehaviour
 
 
 
-                   // Touch.gameObject.SetActive(false);
+                    // Touch.gameObject.SetActive(false);
+                    Tornado.transform.GetChild(2).gameObject.SetActive(true);
 
                     break;
 
@@ -116,5 +118,13 @@ public class TouchSC : MonoBehaviour
     {
         smoothedPosition = Vector3.Lerp(Tornado.position, desiredPosition, smoothSpeed);
         Tornado.position = smoothedPosition;
+    }
+    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, z));
+        float distance;
+        xy.Raycast(ray, out distance);
+        return ray.GetPoint(distance);
     }
 }

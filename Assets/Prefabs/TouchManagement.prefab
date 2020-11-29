@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tornado: {fileID: 0}
+  smoothSpeed: 0.1

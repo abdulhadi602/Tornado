@@ -8,8 +8,7 @@ public class FollowFinger : MonoBehaviour
     private Vector2 position;
 
 
-    private Vector3 smoothedPosition;
-    public float smoothSpeed = 0.125f;
+
 
     private SpringJoint2D Spring;
     private GameObject currentBox;
@@ -40,7 +39,7 @@ public class FollowFinger : MonoBehaviour
             Spring.connectedBody = currentBox.GetComponent<Rigidbody2D>();
         }else if(currentBox != null && (transform.GetChild(0).position.y - 4 > currentBox.transform.position.y ||  currentBox.transform.position.y > transform.GetChild(1).position.y +1 || currentBox.transform.position.x > transform.GetChild(1).position.x+4 || currentBox.transform.position.x < transform.GetChild(1).position.x - 4))
         {
-            Debug.Log("Break");
+          
             Spring.connectedBody = null;
         }
 
