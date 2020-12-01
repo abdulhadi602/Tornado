@@ -10,13 +10,15 @@ public class FollowFinger : MonoBehaviour
 
 
 
-    private SpringJoint2D Spring;
+    private static SpringJoint2D Spring;
     private GameObject currentBox;
 
 
-    
+ 
+
     private void Start()
     {
+       
         Spring = transform.GetChild(1).gameObject.GetComponent<SpringJoint2D>();
         position = new Vector2(0, 2f);
 
@@ -37,10 +39,14 @@ public class FollowFinger : MonoBehaviour
             if(currentBox != hit.collider.gameObject)
             currentBox = hit.collider.gameObject;
             Spring.connectedBody = currentBox.GetComponent<Rigidbody2D>();
-        }else if(currentBox != null && (transform.GetChild(0).position.y - 4 > currentBox.transform.position.y ||  currentBox.transform.position.y > transform.GetChild(1).position.y +1 || currentBox.transform.position.x > transform.GetChild(1).position.x+4 || currentBox.transform.position.x < transform.GetChild(1).position.x - 4))
+
+        }
+        else if(currentBox != null && (transform.GetChild(0).position.y - 4 > currentBox.transform.position.y ||  currentBox.transform.position.y > transform.GetChild(1).position.y +1 || currentBox.transform.position.x > transform.GetChild(1).position.x+4 || currentBox.transform.position.x < transform.GetChild(1).position.x - 4))
         {
-          
-            Spring.connectedBody = null;
+
+            FollowFinger.DetachBody();
+           
+           
         }
 
         
@@ -69,5 +75,12 @@ public class FollowFinger : MonoBehaviour
 
         }**/
     }
+
+    public static void DetachBody()
+    {
+        Spring.connectedBody = null;
+        
+    }
+    
     
 }
