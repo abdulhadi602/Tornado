@@ -6,11 +6,12 @@ public class BoxSpawnerSC : MonoBehaviour
 {
     public GameObject Box;
     private GameObject currentBox;
-    public GameObject Tornado;
+    private GameObject Tornado;
     private FollowFinger fingerSC;
     private FollowBox FollowBoxSC;
     void Start()
     {
+        Tornado = GameObject.FindGameObjectWithTag("Player");
         fingerSC = Tornado.GetComponent<FollowFinger>();
         FollowBoxSC = Camera.main.GetComponent<FollowBox>();
         InstantiateNewBox();

@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class FollowBox : MonoBehaviour
 {
-    public Transform Dummy;
+    private Transform Dummy;
 
-    public Transform Player;
-
-
+    private Transform Player;
 
 
-    public float smoothSpeed = 0.125f;
+
+
+    private float smoothSpeed = 0.04f;
     public Vector3 offset;
     private Vector3 desiredPosition;
     private Vector3 smoothedPosition;
-  
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     public void SetNewInstance(Transform instance)
     {
         Dummy = instance;

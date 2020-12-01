@@ -12,7 +12,7 @@ public class TouchSC : MonoBehaviour
 
     // reference to Rigidbody2D component
 
-    public Transform Tornado;
+    private Transform Tornado;
 
 
 
@@ -29,8 +29,11 @@ public class TouchSC : MonoBehaviour
     private Vector3 smoothedPosition;
     public float smoothSpeed = 0.125f;
 
-   
-   
+
+    private void Start()
+    {
+        Tornado = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {

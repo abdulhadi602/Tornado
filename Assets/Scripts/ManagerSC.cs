@@ -23,6 +23,10 @@ public class ManagerSC : MonoBehaviour
 
 
     }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
     public void GameOver()
     {
         if (!RestartCanvas.activeSelf && !LevelCompleteCanvas.activeSelf)
