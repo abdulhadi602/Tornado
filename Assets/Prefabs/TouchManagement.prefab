@@ -43,5 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abe732ab9e700c409c767b51596c162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tornado: {fileID: 0}
   smoothSpeed: 0.1

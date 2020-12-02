@@ -7,7 +7,10 @@ public class isBaseTouched : MonoBehaviour
 
     public GameObject Animation;
     private static bool isLevelOver = false;
-
+    private void Start()
+    {
+        isLevelOver = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {               
                 if (collision.collider.CompareTag("Dummy") && !isLevelOver)
