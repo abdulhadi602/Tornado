@@ -10,7 +10,7 @@ public class DummyHitSpike : MonoBehaviour
         if (collision.collider.CompareTag("Spike"))
         {
             
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<ManagerSC>().GameOver();
+            //GameObject.FindGameObjectWithTag("Manager").GetComponent<ManagerSC>().GameOver();
 
         }
     }

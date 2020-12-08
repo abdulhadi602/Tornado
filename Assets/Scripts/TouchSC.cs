@@ -12,7 +12,7 @@ public class TouchSC : MonoBehaviour
 
     // reference to Rigidbody2D component
 
-    private Transform Tornado;
+    public Transform Tornado;
 
 
 
@@ -32,7 +32,8 @@ public class TouchSC : MonoBehaviour
 
     private void Start()
     {
-        Tornado = GameObject.FindGameObjectWithTag("Player").transform;
+        // Tornado = GameObject.FindGameObjectWithTag("Player").transform;
+        TouchEnabled = true;
     }
 
     void Update()
@@ -70,7 +71,7 @@ public class TouchSC : MonoBehaviour
                     if (lastTornadoPos.x - touchPos.x < 1 && lastTornadoPos.x - touchPos.x > -1 && lastTornadoPos.y - touchPos.y < 1 && lastTornadoPos.y - touchPos.y > -1)
                     {
                         desiredPosition = touchPos;
-                        Tornado.transform.GetChild(2).gameObject.SetActive(false);
+                        //Tornado.transform.GetChild(2).gameObject.SetActive(false);
                       
                     }
                     
@@ -90,7 +91,7 @@ public class TouchSC : MonoBehaviour
 
 
                     
-                        Tornado.transform.GetChild(2).gameObject.SetActive(false);
+                       // Tornado.transform.GetChild(2).gameObject.SetActive(false);
                         desiredPosition = touchPos;
 
                     
@@ -107,7 +108,7 @@ public class TouchSC : MonoBehaviour
 
 
                     // Touch.gameObject.SetActive(false);
-                    Tornado.transform.GetChild(2).gameObject.SetActive(true);
+                    //Tornado.transform.GetChild(2).gameObject.SetActive(true);
 
                     break;
 

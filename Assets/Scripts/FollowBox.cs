@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class FollowBox : MonoBehaviour
 {
-    private Transform Dummy;
+    public Transform Dummy;
 
-    private Transform Player;
-
-
+    public Transform Player;
 
 
-    private float smoothSpeed = 0.04f;
+
+
+    public float smoothSpeed = 0.04f;
     public Vector3 offset;
     private Vector3 desiredPosition;
     private Vector3 smoothedPosition;
