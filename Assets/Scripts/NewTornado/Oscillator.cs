@@ -8,40 +8,33 @@ public class Oscillator : MonoBehaviour
 
 
 
-    private float approachSpeed = -1;
 
+
+
+    // The target marker.
     public Transform target;
 
-    public bool startFollowing;
-
-    public float distance =50;
-
-    public float rotationSpeed = 200;
-    private void FixedUpdate()
+    // Angular speed in radians per sec.
+    public float speed = 1.0f;
+    public float Speed;
+    void Update()
     {
-      
-       
+        // Determine which direction to rotate towards
+        Vector3 targetDirection = target.position - transform.position;
 
-        if (startFollowing)
-        {
-           
-            /**if(transform.position.z >-5 || transform.position.z <0)
-            {
-                approachSpeed = -approachSpeed;
-            }**/
-            //transform.Translate(new Vector3(target.transform.position.x, target.transform.position.y,-2) * Time.deltaTime * approachSpeed);
-            //transform.position = (transform.position - target.position).normalized * distance + target.transform.position;
-            transform.LookAt(target.transform);
-            
-            transform.RotateAround(new Vector3(target.position.x,target.position.y,-2), Vector3.forward, rotationSpeed * Time.deltaTime);
+        // The step size is equal to speed times frame time.
+        float singleStep = speed * Time.deltaTime;
 
-        }
-    
+        // Rotate the forward vector towards the target direction by one step
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
 
-        
+        // Draw a ray pointing at our target in
+        Debug.DrawRay(transform.position, newDirection, Color.red);
+
+        // Calculate a rotation a step closer to the target and applies rotation to this object
+        transform.rotation = Quaternion.LookRotation(newDirection);
+        transform.RotateAround(target.position, target.up, Speed * Time.deltaTime);
     }
-
-
 
 
 

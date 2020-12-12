@@ -39,7 +39,7 @@ public class FolloFinger3D : MonoBehaviour
             }
             else
             {**/
-                hit.collider.GetComponent<Oscillator>().startFollowing = true;
+              
                 hit.collider.GetComponent<Oscillator>().target = this.target;
                // items.Add(hit.collider.gameObject);
            // }
@@ -59,7 +59,7 @@ public class FolloFinger3D : MonoBehaviour
 
     public static void DetachBody(GameObject item)
     {
-        item.GetComponent<Oscillator>().startFollowing = false;
+      
         
 
     }

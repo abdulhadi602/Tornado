@@ -10,7 +10,7 @@ public class TornadoTriggerCollider : MonoBehaviour
     {
         if (hit.CompareTag("Dummy"))
         {
-            hit.GetComponent<Oscillator>().startFollowing = true;
+          
             hit.GetComponent<Oscillator>().target = this.target;
         }
     }
