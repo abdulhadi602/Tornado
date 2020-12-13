@@ -13,6 +13,7 @@ TagManager:
   - BoxSpawner
   - Score
   - Dummy
+  - Target
   layers:
   - Default
   - TransparentFX

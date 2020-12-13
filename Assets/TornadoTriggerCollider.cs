@@ -10,8 +10,15 @@ public class TornadoTriggerCollider : MonoBehaviour
     {
         if (hit.CompareTag("Dummy"))
         {
-          
-            hit.GetComponent<Oscillator>().target = this.target;
+           
+            hit.transform.parent = transform;
+            
+            hit.GetComponent<AI>().enabled = false;
+            hit.GetComponent<Oscillator>().target = target;
+            hit.GetComponent<Animator>().enabled = false;
+            hit.GetComponent<Oscillator>().enabled = true;
+
+
         }
     }
 }
