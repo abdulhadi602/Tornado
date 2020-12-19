@@ -10,7 +10,7 @@ public class TornadoTriggerCollider : MonoBehaviour
     {
         if (hit.CompareTag("Dummy"))
         {
-           
+            hit.transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y+ 1,  hit.transform.position.z);
             hit.transform.parent = transform;
             
             hit.GetComponent<AI>().enabled = false;
