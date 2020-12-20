@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5050619561666971356}
   - component: {fileID: 5050619561666971357}
+  - component: {fileID: 948161560}
   m_Layer: 0
   m_Name: TouchManagement
   m_TagString: Untagged
@@ -38,9 +39,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5050619561666971358}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7abe732ab9e700c409c767b51596c162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.1
+  Tornado: {fileID: 0}
+  smoothSpeed: 0.25
+--- !u!114 &948161560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050619561666971358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34aa7b6227b9a63489b9a43987bea365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  rotationSpeed: 100
+  Tornado: {fileID: 0}

@@ -8,11 +8,11 @@ public class TornadoTriggerCollider : MonoBehaviour
    
     private void OnTriggerEnter(Collider hit)
     {
-        if (hit.CompareTag("Dummy"))
+        if (hit.CompareTag("Dummy") && tag.Equals("Player"))
         {
-            hit.transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y+ 1,  hit.transform.position.z);
             hit.transform.parent = transform;
-            
+           
+            hit.transform.position = new Vector3(hit.transform.position.x,  Random.Range(2, 4), hit.transform.position.z+Random.Range(0,2));
             hit.GetComponent<AI>().enabled = false;
             hit.GetComponent<Oscillator>().target = target;
             hit.GetComponent<Animator>().enabled = false;
